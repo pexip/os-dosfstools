@@ -1,3 +1,9 @@
+dosfstools (4.2-1+pexip24u2) pexip; urgency=medium
+
+  * No-change rebuild for inclusion in main.
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Thu, 12 Jun 2025 16:28:12 +0100
+
 dosfstools (4.2-1+pexip24u1) pexip; urgency=medium
 
   * Prepare Pexip packaging
