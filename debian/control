@@ -9,7 +9,7 @@ Rules-Requires-Root: no
 Homepage: https://github.com/dosfstools/dosfstools
 Vcs-Browser: https://salsa.debian.org/debian/dosfstools
 Vcs-Git: https://salsa.debian.org/debian/dosfstools.git
-XS-Pexip-Upstream: http://deb.debian.org/debian/ bookworm
+XS-Pexip-Upstream: http://deb.debian.org/debian/ trixie
 
 Package: dosfstools
 Architecture: any
