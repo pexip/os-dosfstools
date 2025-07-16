@@ -1,0 +1,38 @@
+From 94dc01ba0c1b644b12f28e23f68faac5d3c8ea88 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Bj=C3=B8rn=20Forsman?= <bjorn.forsman@gmail.com>
+Date: Wed, 5 Dec 2018 19:57:26 +0100
+Subject: [PATCH] testsuite: use SOURCE_DATE_EPOCH
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Instead of the special --invariant flag, use SOURCE_DATE_EPOCH (and the
+volume-id option) for reproducible build. (Plan for eventual removal of
+the --invariant flag.)
+
+Use "export SOURCE_DATE_EPOCH=1426325213; command" instead of the
+simpler "SOURCE_DATE_EPOCH=1426325213 command". Both forms work in bash,
+but apparently only the "export" version works in dash. Run in a
+subshell to not leak SOURCE_DATE_EPOCH.
+
+Signed-off-by: Bjørn Forsman <bjorn.forsman@gmail.com>
+---
+ tests/test-mkfs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/tests/test-mkfs b/tests/test-mkfs
+index fd79824..2672d54 100755
+--- a/tests/test-mkfs
++++ b/tests/test-mkfs
+@@ -52,7 +52,7 @@ echo "Test $testname"
+ rm -f "${testname}.out" "${testname}.refimg"
+ 
+ xxd -r "${srcdir}/${testname}.xxd" "${testname}.refimg" || exit 99
+-run_mkfs -C -v --invariant $ARGS "${testname}.out" $SIZE || exit 99
++(export SOURCE_DATE_EPOCH=1426325213; run_mkfs -C -v -i 0x1234abcd $ARGS "${testname}.out" $SIZE) || exit 99
+ 
+ echo
+ echo "Comparing..."
+-- 
+2.47.2
+

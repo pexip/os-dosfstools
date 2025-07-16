@@ -3,8 +3,8 @@ Section: otherosfs
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Andreas Bombe <aeb@debian.org>
-Build-Depends: debhelper-compat (= 13), xxd
-Standards-Version: 4.5.1
+Build-Depends: debhelper-compat (= 13), xxd <!nocheck>
+Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Homepage: https://github.com/dosfstools/dosfstools
 Vcs-Browser: https://salsa.debian.org/debian/dosfstools
