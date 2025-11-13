@@ -1,3 +1,9 @@
+dosfstools (4.2-1.2+pexip25u2) pexip-trixie; urgency=medium
+
+  * Force rebuild
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 13 Nov 2025 09:56:06 +0000
+
 dosfstools (4.2-1.2+pexip25u1) pexip-trixie; urgency=medium
 
   * Initial trixie build
